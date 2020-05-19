@@ -50,7 +50,7 @@ Lambda also records up to 256 KB of the error object in the function's logs\. To
 
 ```
 $ aws lambda invoke --function-name my-function out.json --log-type Tail \
---query 'LogResult' --output text |  base64 -d
+--query 'LogResult' --output text |  base64 -D
 START RequestId: 8bbbfb91-a3ff-4502-b1b7-cb8f6658de64 Version: $LATEST
 2019-06-05T22:11:27.082Z        8bbbfb91-a3ff-4502-b1b7-cb8f6658de64    ERROR   Invoke Error    {"errorType":"ReferenceError","errorMessage":"x is not defined","stack":["ReferenceError: x is not defined","    at Runtime.exports.handler (/var/task/index.js:2:3)","    at Runtime.handleOnce (/var/runtime/Runtime.js:63:25)","    at process._tickCallback (internal/process/next_tick.js:68:7)"]}
 END RequestId: 8bbbfb91-a3ff-4502-b1b7-cb8f6658de64
